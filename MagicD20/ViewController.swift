@@ -48,10 +48,10 @@ class ViewController: UIViewController {
         P4Label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
         
         // Rotates buttons
-        /*P1ButtonLeft.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-        P2ButtonRight.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-        P3ButtonLeft.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-        P4ButtonRight.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)*/
+        p1DecrementButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        p2DecrementButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        p3DecrementButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        p4DecrementButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
 
         // Set round corners and border to labels
         P1Label.layer.borderWidth = 2
@@ -75,15 +75,26 @@ class ViewController: UIViewController {
         P4Label.layer.borderColor = UIColor.gray.cgColor
         
         // Set round corner and border to refresh button
-        refreshButton.layer.borderWidth = 2
+        /*refreshButton.layer.borderWidth = 2
         refreshButton.layer.cornerRadius = 15
         refreshButton.layer.masksToBounds = true
-        refreshButton.layer.borderColor = UIColor.gray.cgColor
+        refreshButton.layer.borderColor = UIColor.gray.cgColor*/
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func p1IncrementPressed(_ sender: UIButton) {
+        /*if p1IncrementButton.isSelected {
+            p1IncrementButton.backgroundColor = UIColor.lightGray
+            p1IncrementButton.isSelected = false
+        } else {
+            p1IncrementButton.backgroundColor = UIColor.clear
+            p1IncrementButton.isSelected = true
+        }*/
+
     }
     
 }
