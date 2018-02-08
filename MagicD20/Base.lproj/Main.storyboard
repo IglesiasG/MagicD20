@@ -110,6 +110,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                                 <state key="normal" image="Increment"/>
+                                <connections>
+                                    <action selector="p2IncrementPressedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Xji-b2-VM5"/>
+                                    <action selector="p2IncrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyR-kh-lYN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRC-FJ-wys">
                                 <rect key="frame" x="210" y="155" width="150" height="137.5"/>
@@ -117,6 +121,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="Decrement"/>
+                                <connections>
+                                    <action selector="p2DecrementPressedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="c1V-87-tPp"/>
+                                    <action selector="p2DecrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hvM-i3-Yuz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-fe-rzP">
                                 <rect key="frame" x="16" y="370" width="150" height="137.5"/>
@@ -124,6 +132,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                 <state key="normal" image="Decrement"/>
+                                <connections>
+                                    <action selector="p3DecrementPressedDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F9a-W9-ls6"/>
+                                    <action selector="p3DecrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IJ6-XF-3kz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHH-Pd-mka">
                                 <rect key="frame" x="16" y="509" width="150" height="137.5"/>
@@ -131,6 +143,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="Increment"/>
+                                <connections>
+                                    <action selector="p3IncrementPressedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="jRX-cC-STM"/>
+                                    <action selector="p3IncrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hCO-JA-opR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDn-tG-46p">
                                 <rect key="frame" x="210" y="370" width="150" height="137.5"/>
@@ -138,6 +154,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="60"/>
                                 <state key="normal" image="Increment"/>
+                                <connections>
+                                    <action selector="p4IncrementPressedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="J0t-xw-VTh"/>
+                                    <action selector="p4IncrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZtN-ed-pKU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-v1-KWg">
                                 <rect key="frame" x="210" y="509" width="150" height="137.5"/>
@@ -145,6 +165,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="Decrement"/>
+                                <connections>
+                                    <action selector="p4DecrementPressedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="GI5-lV-jRQ"/>
+                                    <action selector="p4DecrementRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMN-cj-E34"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

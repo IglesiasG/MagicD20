@@ -59,6 +59,72 @@ class ViewController: UIViewController {
         
     }
     
+    @objc func incrementP2Health(){
+        
+        if p2LifeTotal == 999 {
+            p2LifeTotal = 999
+        } else {
+            p2LifeTotal += 1
+            P2Label.text = String(p2LifeTotal)
+        }
+        
+    }
+    
+    @objc func decrementP2Health(){
+        
+        if p2LifeTotal == 0 {
+            p2LifeTotal = 0
+        } else {
+            p2LifeTotal -= 1
+            P2Label.text = String(p2LifeTotal)
+        }
+        
+    }
+    
+    @objc func incrementP3Health(){
+        
+        if p3LifeTotal == 999 {
+            p3LifeTotal = 999
+        } else {
+            p3LifeTotal += 1
+            P3Label.text = String(p3LifeTotal)
+        }
+        
+    }
+    
+    @objc func decrementP3Health(){
+        
+        if p3LifeTotal == 0 {
+            p3LifeTotal = 0
+        } else {
+            p3LifeTotal -= 1
+            P3Label.text = String(p3LifeTotal)
+        }
+        
+    }
+    
+    @objc func incrementP4Health(){
+        
+        if p4LifeTotal == 999 {
+            p4LifeTotal = 999
+        } else {
+            p4LifeTotal += 1
+            P4Label.text = String(p4LifeTotal)
+        }
+        
+    }
+    
+    @objc func decrementP4Health(){
+        
+        if p4LifeTotal == 0 {
+            p4LifeTotal = 0
+        } else {
+            p4LifeTotal -= 1
+            P4Label.text = String(p4LifeTotal)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -134,6 +200,7 @@ class ViewController: UIViewController {
         P4Label.text = String(initialLifeTotal)
     }
     
+    /* Player1 Button Actions */
     @IBAction func p1IncrementPressedDown(_ sender: Any) {
         
         // Max life is set to 999 and cannot go past
@@ -165,6 +232,105 @@ class ViewController: UIViewController {
     }
     
     @IBAction func p1DecrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    /* Player2 Button Actions */
+    @IBAction func p2IncrementPressedDown(_ sender: Any) {
+        // Max life is set to 999 and cannot go past
+        if p2LifeTotal == 999 {
+            p2LifeTotal = 999
+        } else {
+            p2LifeTotal += 1
+            P2Label.text = String(p2LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(incrementP2Health), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func p2IncrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    @IBAction func p2DecrementPressedDown(_ sender: Any) {
+        
+        if p2LifeTotal == 0 {
+            p2LifeTotal = 0
+        } else {
+            p2LifeTotal -= 1
+            P2Label.text = String(p2LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(decrementP2Health), userInfo: nil, repeats: true)
+    }
+    @IBAction func p2DecrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    /* Player3 Button Actions */
+    @IBAction func p3IncrementPressedDown(_ sender: Any) {
+        
+        // Max life is set to 999 and cannot go past
+        if p3LifeTotal == 999 {
+            p3LifeTotal = 999
+        } else {
+            p3LifeTotal += 1
+            P3Label.text = String(p3LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(incrementP3Health), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func p3IncrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    @IBAction func p3DecrementPressedDown(_ sender: Any) {
+        
+        if p3LifeTotal == 0 {
+            p3LifeTotal = 0
+        } else {
+            p3LifeTotal -= 1
+            P3Label.text = String(p3LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(decrementP3Health), userInfo: nil, repeats: true)
+    }
+    @IBAction func p3DecrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    /* Player4 Button Actions */
+    @IBAction func p4IncrementPressedDown(_ sender: Any) {
+        
+        // Max life is set to 999 and cannot go past
+        if p4LifeTotal == 999 {
+            p4LifeTotal = 999
+        } else {
+            p4LifeTotal += 1
+            P4Label.text = String(p4LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(incrementP4Health), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func p4IncrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    @IBAction func p4DecrementPressedDown(_ sender: Any) {
+        
+        if p4LifeTotal == 0 {
+            p4LifeTotal = 0
+        } else {
+            p4LifeTotal -= 1
+            P4Label.text = String(p4LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(decrementP4Health), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func p4DecrementRelease(_ sender: Any) {
         lifeCounter.invalidate()
     }
 }
