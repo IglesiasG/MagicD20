@@ -26,16 +26,49 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var refreshButton: UIButton!
     
-    var p1LifeTotal = 40
-    var p2LifeTotal = 40
-    var p3LifeTotal = 40
-    var p4LifeTotal = 40
+    var initialLifeTotal = 40
+    
+    var p1LifeTotal = 0
+    var p2LifeTotal = 0
+    var p3LifeTotal = 0
+    var p4LifeTotal = 0
+    
+    var lifeCounter: Timer!
+    
+    // Functions to increment players health, used by timer
+    // Had to seperate functions individually because of timer
+    @objc func incrementP1Health(){
+        
+        if p1LifeTotal == 999 {
+            p1LifeTotal = 999
+        } else {
+            p1LifeTotal += 1
+            P1Label.text = String(p1LifeTotal)
+        }
+        
+    }
+    
+    @objc func decrementP1Health(){
+        
+        if p1LifeTotal == 0 {
+            p1LifeTotal = 0
+        } else {
+            p1LifeTotal -= 1
+            P1Label.text = String(p1LifeTotal)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Set initial life totals
+        p1LifeTotal = initialLifeTotal
+        p2LifeTotal = initialLifeTotal
+        p3LifeTotal = initialLifeTotal
+        p4LifeTotal = initialLifeTotal
+        
         P1Label.text = String(p1LifeTotal)
         P2Label.text = String(p1LifeTotal)
         P3Label.text = String(p1LifeTotal)
@@ -86,16 +119,53 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func p1IncrementPressed(_ sender: UIButton) {
-        /*if p1IncrementButton.isSelected {
-            p1IncrementButton.backgroundColor = UIColor.lightGray
-            p1IncrementButton.isSelected = false
-        } else {
-            p1IncrementButton.backgroundColor = UIColor.clear
-            p1IncrementButton.isSelected = true
-        }*/
-
+    
+    // Resets life totals of all players to initial values
+    @IBAction func resetPressed(_ sender: Any) {
+        
+        p1LifeTotal = initialLifeTotal
+        p2LifeTotal = initialLifeTotal
+        p3LifeTotal = initialLifeTotal
+        p4LifeTotal = initialLifeTotal
+        
+        P1Label.text = String(initialLifeTotal)
+        P2Label.text = String(initialLifeTotal)
+        P3Label.text = String(initialLifeTotal)
+        P4Label.text = String(initialLifeTotal)
     }
     
+    @IBAction func p1IncrementPressedDown(_ sender: Any) {
+        
+        // Max life is set to 999 and cannot go past
+        if p1LifeTotal == 999 {
+            p1LifeTotal = 999
+        } else {
+            p1LifeTotal += 1
+            P1Label.text = String(p1LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(incrementP1Health), userInfo: nil, repeats: true)
+        
+    }
+    
+    @IBAction func p1IncrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
+    
+    @IBAction func p1DecrementPressedDown(_ sender: Any) {
+        
+        if p1LifeTotal == 0 {
+            p1LifeTotal = 0
+        } else {
+            p1LifeTotal -= 1
+            P1Label.text = String(p1LifeTotal)
+        }
+        
+        lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(decrementP1Health), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func p1DecrementRelease(_ sender: Any) {
+        lifeCounter.invalidate()
+    }
 }
 
