@@ -75,6 +75,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.75160530820000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Search"/>
+                                <connections>
+                                    <segue destination="u5O-eN-Psm" kind="presentation" modalTransitionStyle="crossDissolve" id="j8Q-b6-5w6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0W-JC-0CA">
                                 <rect key="frame" x="258" y="308" width="50" height="50"/>
@@ -191,14 +194,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="FhA-en-eba">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="665"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="ri3-2V-XzK"/>
-                </view>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yZ6-nO-loF">
+            <objects>
+                <viewController id="u5O-eN-Psm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Glo-2g-tHM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TN0-WX-Qd4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXI-tA-MC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="32"/>
         </scene>
     </scenes>
     <resources>
