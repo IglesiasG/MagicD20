@@ -173,12 +173,6 @@ class ViewController: UIViewController {
         P4Label.layer.masksToBounds = true
         P4Label.layer.borderColor = UIColor.gray.cgColor
         
-        // Set round corner and border to refresh button
-        /*refreshButton.layer.borderWidth = 2
-        refreshButton.layer.cornerRadius = 15
-        refreshButton.layer.masksToBounds = true
-        refreshButton.layer.borderColor = UIColor.gray.cgColor*/
-        
     }
 
     override func didReceiveMemoryWarning() {
