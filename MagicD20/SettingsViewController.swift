@@ -21,6 +21,11 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Makes sure that status bar is shown at the top
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
 
     /*
     // MARK: - Navigation

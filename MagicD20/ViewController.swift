@@ -174,6 +174,18 @@ class ViewController: UIViewController {
         P4Label.layer.borderColor = UIColor.gray.cgColor
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -289,7 +301,10 @@ class ViewController: UIViewController {
         }
         
         lifeCounter = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(decrementP3Health), userInfo: nil, repeats: true)
+        
     }
+    
+    
     @IBAction func p3DecrementRelease(_ sender: Any) {
         lifeCounter.invalidate()
     }
