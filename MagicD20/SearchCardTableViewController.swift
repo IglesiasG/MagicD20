@@ -15,9 +15,18 @@ class SearchCardTableViewController: UITableViewController, UISearchBarDelegate 
         let name: String
     }
     
+    struct CardList: Decodable{
+        let data: [String]
+    }
+    
+    //var jsonResults = JSONDecoder()
+    let cardData = CardList(data: ["test", "test2", "test3"])
+    
     @IBOutlet weak var cardSearchBar: UISearchBar!
 
-    let urlScryfall = "https://api.scryfall.com/cards/named?fuzzy=aust+com"
+    let urlScryfall = "https://api.scryfall.com/cards/named?fuzzy=blessing"
+    
+    let urlAutoComplete = "https://api.scryfall.com/cards/autocomplete?q="
     
     let defaultSession = URLSession(configuration: .default)
     
@@ -25,6 +34,14 @@ class SearchCardTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Execute table load")
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        print("Table load executed")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,11 +51,12 @@ class SearchCardTableViewController: UITableViewController, UISearchBarDelegate 
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
         
-        dataTask?.cancel()
+        let searchBarEntry = searchBar.text!
         
-        guard let url = URL(string: urlScryfall) else { return }
+        let searchBarEncode = searchBarEntry.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        guard let url = URL(string: urlAutoComplete + searchBarEncode!) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
@@ -48,13 +66,20 @@ class SearchCardTableViewController: UITableViewController, UISearchBarDelegate 
             guard let data = data else { return }
             //JSON decoding and store into struct
             do {
-                let jsonResults = try JSONDecoder().decode(Article.self, from: data)
+                let jsonResults = try JSONDecoder().decode(CardList.self, from: data)
+                
+                /*for info in self.jsonResults {
+                    
+                self.cardData.append(info.data)
+                    
+                }*/
+                
                 print(jsonResults)
             } catch {
                 print(error)
             }
             
-            }.resume()
+        }.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,24 +91,26 @@ class SearchCardTableViewController: UITableViewController, UISearchBarDelegate 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cardData.data.count
     }
-    
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CardCells", for: indexPath)
+        
+        /*for k in cardData.data{
+            cell.textLabel?.text = k
+        }*/
+        
+        cell.textLabel?.text = cardData.data[indexPath.row]
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
