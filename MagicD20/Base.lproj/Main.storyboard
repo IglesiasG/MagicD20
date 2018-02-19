@@ -76,7 +76,7 @@
                                 <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.75160530820000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Search"/>
                                 <connections>
-                                    <segue destination="ncn-RT-wIn" kind="show" id="Lof-aJ-G1e"/>
+                                    <segue destination="olV-Cz-IeR" kind="show" id="ha6-jN-dOz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0W-JC-0CA">
@@ -201,53 +201,57 @@
             </objects>
             <point key="canvasLocation" x="372" y="31.934032983508249"/>
         </scene>
-        <!--Search Cards-->
-        <scene sceneID="xvz-Um-0fR">
+        <!--Search Card-->
+        <scene sceneID="6uV-wV-a4w">
             <objects>
-                <tableViewController title="Search Cards" id="ncn-RT-wIn" customClass="SearchCardTableViewController" customModule="MagicD20" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kRL-jR-cSQ">
+                <viewController title="Search Card" id="olV-Cz-IeR" customClass="SearchCardViewController" customModule="MagicD20" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ML-ff-WPS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Th3-kg-413">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="ncn-RT-wIn" id="9vR-kx-Cse"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCells" id="VzS-gX-lcz">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKM-qs-eKI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="olV-Cz-IeR" id="aGz-Az-zoS"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mBH-X0-lab">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardListCell" id="Yz9-kK-mYv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yz9-kK-mYv" id="wQw-KT-0Es">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="olV-Cz-IeR" id="mZw-7k-7PH"/>
+                                    <outlet property="delegate" destination="olV-Cz-IeR" id="BuJ-Lu-c1d"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yba-Z4-J3Z">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="20"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VzS-gX-lcz" id="RqW-tQ-PzH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ncn-RT-wIn" id="Ikf-n4-cqd"/>
-                            <outlet property="delegate" destination="ncn-RT-wIn" id="tJK-p8-A4B"/>
-                        </connections>
-                    </tableView>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VJX-Sx-CB0"/>
+                    </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="I0f-FK-kPl" id="2rC-aw-3Tj"/>
+                        <outlet property="activityIndicator" destination="yba-Z4-J3Z" id="TU0-tT-dqm"/>
+                        <outlet property="tableView" destination="mBH-X0-lab" id="Ure-yT-CD4"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fwr-gg-0Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="I0f-FK-kPl">
-                    <connections>
-                        <outlet property="delegate" destination="ncn-RT-wIn" id="obK-Oy-1ho"/>
-                        <outlet property="searchBar" destination="Th3-kg-413" id="pzZ-Zi-97b"/>
-                        <outlet property="searchContentsController" destination="ncn-RT-wIn" id="QgN-s2-Ner"/>
-                        <outlet property="searchResultsDataSource" destination="ncn-RT-wIn" id="i44-c4-U1E"/>
-                        <outlet property="searchResultsDelegate" destination="ncn-RT-wIn" id="7YH-xJ-7fh"/>
-                    </connections>
-                </searchDisplayController>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEi-ep-8sJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-428"/>
+            <point key="canvasLocation" x="1440.8" y="-469.1154422788606"/>
         </scene>
         <!--Settings-->
         <scene sceneID="df2-6J-XBI">
