@@ -19,7 +19,7 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
         var data: [String]
         
         init() {
-            data = [""]
+            data = []
         }
     }
     
@@ -28,10 +28,11 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,7 @@
 		2F373F281FC924F400E29DFD /* MagicD20Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F373F271FC924F400E29DFD /* MagicD20Tests.swift */; };
 		2F373F331FC924F400E29DFD /* MagicD20UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F373F321FC924F400E29DFD /* MagicD20UITests.swift */; };
 		2F3CEE42203A9CEF009FB9C1 /* SearchCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3CEE41203A9CEF009FB9C1 /* SearchCardViewController.swift */; };
+		2F3CEE44203C14CF009FB9C1 /* CardPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3CEE43203C14CF009FB9C1 /* CardPopupViewController.swift */; };
 		2FFDC092202F127B002F779E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFDC091202F127B002F779E /* SettingsViewController.swift */; };
 		2FFDC09420342C02002F779E /* SearchCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFDC09320342C02002F779E /* SearchCardTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		2F373F321FC924F400E29DFD /* MagicD20UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicD20UITests.swift; sourceTree = "<group>"; };
 		2F373F341FC924F400E29DFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F3CEE41203A9CEF009FB9C1 /* SearchCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardViewController.swift; sourceTree = "<group>"; };
+		2F3CEE43203C14CF009FB9C1 /* CardPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPopupViewController.swift; sourceTree = "<group>"; };
 		2FFDC091202F127B002F779E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2FFDC09320342C02002F779E /* SearchCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				2FFDC09320342C02002F779E /* SearchCardTableViewController.swift */,
 				2F3CEE41203A9CEF009FB9C1 /* SearchCardViewController.swift */,
 				2FFDC091202F127B002F779E /* SettingsViewController.swift */,
+				2F3CEE43203C14CF009FB9C1 /* CardPopupViewController.swift */,
 				2F373F161FC924F300E29DFD /* Main.storyboard */,
 				2F373F191FC924F300E29DFD /* Assets.xcassets */,
 				2F373F1B1FC924F300E29DFD /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				2F373F151FC924F300E29DFD /* ViewController.swift in Sources */,
 				2F373F131FC924F300E29DFD /* AppDelegate.swift in Sources */,
 				2F3CEE42203A9CEF009FB9C1 /* SearchCardViewController.swift in Sources */,
+				2F3CEE44203C14CF009FB9C1 /* CardPopupViewController.swift in Sources */,
 				2FFDC092202F127B002F779E /* SettingsViewController.swift in Sources */,
 				2FFDC09420342C02002F779E /* SearchCardTableViewController.swift in Sources */,
 			);
