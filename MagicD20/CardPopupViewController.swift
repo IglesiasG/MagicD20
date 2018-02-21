@@ -10,10 +10,14 @@ import UIKit
 
 class CardPopupViewController: UIViewController {
     
-    @IBOutlet weak var cardNameLabel: UILabel!
+    var cardName: String = ""
+    
+    @IBOutlet weak var cardNameLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cardNameLabel?.text = cardName
 
         // Do any additional setup after loading the view.
     }

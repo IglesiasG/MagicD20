@@ -230,7 +230,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="16a-Qa-csg" kind="presentation" identifier="popupCardIdentifier" modalTransitionStyle="crossDissolve" id="8sC-jH-0ej"/>
+                                            <segue destination="16a-Qa-csg" kind="presentation" identifier="popupCardIdentifierSegue" modalTransitionStyle="crossDissolve" id="8sC-jH-0ej"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

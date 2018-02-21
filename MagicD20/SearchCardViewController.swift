@@ -23,12 +23,14 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    var cardNameFull: String = ""
+    
     var cardData = CardList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
-        tableView.tableFooterView = UIView()
+        //tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +50,7 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
         return cardData.data.count
     }
     
+    // Populate table cells using the cardListCell struct
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardListCell", for: indexPath)
@@ -57,6 +60,17 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        cardNameFull = cardData.data[indexPath.row]
+        
+    }*/
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        cardNameFull = cardData.data[indexPath.row]
+    }
+    
+    // When search button is clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         self.activityIndicator.startAnimating()
@@ -73,13 +87,14 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
             guard let data = data else { return }
-            //JSON decoding and store into struct
+            
+            // decode the json results and store in struct
             do {
                 let jsonResults = try JSONDecoder().decode(CardList.self, from: data)
                 
                 self.cardData = jsonResults
                 
-                
+                // populates the table cells in main thread
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                     self.tableView.reloadData()
@@ -92,6 +107,16 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }.resume()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popupCardIdentifierSegue" {
+            let popup = segue.destination as! CardPopupViewController
+            
+            let textPass = cardNameFull
+            
+            popup.cardName = textPass
+        }
     }
 
     /*
