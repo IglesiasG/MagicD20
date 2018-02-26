@@ -32,10 +32,6 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
         activityIndicator.isHidden = true
         //tableView.tableFooterView = UIView()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,13 +96,14 @@ class SearchCardViewController: UIViewController, UITableViewDelegate, UITableVi
                     self.tableView.reloadData()
                 }
                 
-                print(jsonResults)
+                //print(jsonResults)
             } catch {
                 print(error)
             }
             
         }.resume()
         
+        searchBar.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
