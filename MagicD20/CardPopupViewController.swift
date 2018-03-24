@@ -18,6 +18,10 @@ class CardPopupViewController: UIViewController {
 
     @IBOutlet weak var popupView: UIView!
     
+    struct doubleSidedCard: Decodable {
+        var doubleSideInformation = [cardInformation]()
+    }
+    
     struct cardImages: Decodable {
         var small: String
         var normal: String
@@ -31,6 +35,7 @@ class CardPopupViewController: UIViewController {
         var type_line: String
         var oracle_text: String
         var set_name: String
+        //var card_faces: doubleSidedCard
         
     }
     
