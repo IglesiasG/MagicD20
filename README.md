@@ -14,6 +14,6 @@ the user to the card search feature where users are able to type on a search box
 jSon data containing card information such as card name, image, description, etc.
 
 More features will be coming in the future and I really enjoy learning about Swift and Xcode in general.
-I hope you have a chance to run the app and play around with it.
+If you have Xcode, feel free to download and play around with it.
 
 -Gener Iglesias
